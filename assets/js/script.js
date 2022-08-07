@@ -34,17 +34,32 @@ function refreshState() {
 
     if (scheduleStr) {
         var scheduleObject = JSON.parse(scheduleStr)
+        if (input9El) {input9El.value = scheduleObject["9"]}
+        if (input10El) {input10El.value = scheduleObject["10"]}
+        if (input11El) {input11El.value = scheduleObject["11"]}
+        if (input12El) {input12El.value = scheduleObject["12"]}
+        if (input1El) { input1El.value = scheduleObject["1"]}
+        if (input2El) {input2El.value = scheduleObject["2"]}
+        if (input3El) {input3El.value = scheduleObject["3"]}
+        if (input4El) {input4El.value = scheduleObject["4"]}
+        if (input5El) {input5El.value = scheduleObject["5"]}
+
+    } else {
+        var scheduleObject = {
+            "9": "",
+            "10": "",
+            "11": "",
+            "12": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+        }
+        localStorage.setItem("schedule", JSON.stringify(scheduleObject))   
     }
 
-    if (input9El) {input9El.value = scheduleObject["9"]}
-    if (input10El) {input10El.value = scheduleObject["10"]}
-    if (input11El) {input11El.value = scheduleObject["11"]}
-    if (input12El) {input12El.value = scheduleObject["12"]}
-    if (input1El) { input1El.value = scheduleObject["1"]}
-    if (input2El) {input2El.value = scheduleObject["2"]}
-    if (input3El) {input3El.value = scheduleObject["3"]}
-    if (input4El) {input4El.value = scheduleObject["4"]}
-    if (input5El) {input5El.value = scheduleObject["5"]}
+
 
 
 }
