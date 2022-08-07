@@ -10,8 +10,15 @@ var input3El = document.getElementById("input3")
 var input4El = document.getElementById("input4")
 var input5El = document.getElementById("input5")
 
-// var saveBtn1El = document.getElementById("saveBtn2")
-// var input1El = document.getElementById("input2")
+// var text9El = document.getElementById("input9")
+// var input10El = document.getElementById("input10")
+// var input11El = document.getElementById("input11")
+// var input12El = document.getElementById("input12")
+// var input1El = document.getElementById("input1")
+// var input2El = document.getElementById("input2")
+// var input3El = document.getElementById("input3")
+// var input4El = document.getElementById("input4")
+// var input5El = document.getElementById("input5")
 
 // update header with datetime
 function header () {
@@ -53,8 +60,49 @@ containerEl.addEventListener("click", function(event) {
         var scheduleStr = localStorage.getItem("schedule")
         var scheduleObject = JSON.parse(scheduleStr)
         scheduleObject[hour] = inputText
-        localStorage.setItem("schedule", JSON.stringify(scheduleObject))        
+        localStorage.setItem("schedule", JSON.stringify(scheduleObject))   
+
     }
 })
 
 refreshState()
+
+function timeColorCode() {
+    var currentHour = moment().format("H");
+ 
+    console.log(currentHour)
+    var hourList = $(".hour")
+    
+    for (var i = 0; i < hourList.length; i ++) {
+        el = hourList[i]
+        var id = el.id
+        var hourIndexStr = id.substring(4)
+        var hourIndex = parseInt(hourIndexStr)
+        // console.log(hourIndex)
+
+        if (hourIndex < 9) {
+            hourIndex = hourIndex + 12
+        }
+        // console.log(hourIndex)
+
+        if (hourIndex>currentHour) {
+            $('#' + el.id).css("background-color", "green")
+            //future case, set style green
+        } else if (hourIndex===currentHour) { 
+            $('#' + el.id).css("background-color", "red")
+            //current case, set style red
+        } else {
+            $('#' + el.id).css("background-color", "grey")
+            //set style grey
+        }            
+
+
+    }
+
+    //grab array of all header elements 
+    //for each header, compare id to current time
+    // add css based on time
+
+}
+timeColorCode()
+
