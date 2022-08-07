@@ -10,16 +10,6 @@ var input3El = document.getElementById("input3")
 var input4El = document.getElementById("input4")
 var input5El = document.getElementById("input5")
 
-// var text9El = document.getElementById("input9")
-// var input10El = document.getElementById("input10")
-// var input11El = document.getElementById("input11")
-// var input12El = document.getElementById("input12")
-// var input1El = document.getElementById("input1")
-// var input2El = document.getElementById("input2")
-// var input3El = document.getElementById("input3")
-// var input4El = document.getElementById("input4")
-// var input5El = document.getElementById("input5")
-
 // update header with datetime
 function header () {
     var today = moment();
@@ -59,11 +49,9 @@ function refreshState() {
         localStorage.setItem("schedule", JSON.stringify(scheduleObject))   
     }
 
-
-
-
 }
 
+refreshState()
 containerEl.addEventListener("click", function(event) {
     event.preventDefault
     var element = event.target
@@ -80,7 +68,7 @@ containerEl.addEventListener("click", function(event) {
     }
 })
 
-refreshState()
+
 
 function timeColorCode() {
     var currentHour = moment().format("H");
