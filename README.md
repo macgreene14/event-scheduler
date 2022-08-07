@@ -3,9 +3,7 @@ This app allows users to record daily tasks in an hourly agenda.
 The data is saved to local storage for data persistance.
 The text header is colorized based on the current time of day;
   
- Markup : * Current Hour: Red (Urgent)
-          * Future Hour: Green
-          * Past Hour: Grey
+Current Hour: Red (Urgent), Future Hour: Green, Past Hour: Grey
   
  View deployed application at: https://macgreene14.github.io/event-scheduler
 
