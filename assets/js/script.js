@@ -88,7 +88,7 @@ function timeColorCode() {
         }
         // console.log(hourIndex)
 
-        if (hourIndex>currentHour) {
+        if (hourIndex>currentHour && currentHour > 8) {
             $('#' + el.id).css("background-color", "green")
             //future case, set style green
         } else if (hourIndex===currentHour) { 
